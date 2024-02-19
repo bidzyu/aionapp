@@ -1,0 +1,390 @@
+:root {
+  --bunny-size: 300px;
+  --bunny-color: rgb(255, 218, 224);
+  --bunny-color-2: #fdb1d4;
+  --bunny-eye-color: #473929;
+  --bunny-cheek-color: red;
+  --bunny-tongue-color: red;
+  --bunny-mouth-color: #473929;
+  --bunny-nose-color: #473929;
+
+  --breathe-duration: 10s;
+
+  --main-color: #fff8f8;
+}
+
+.bunny-hello {
+  --grass-color: #bde1fdd7;
+  --grass-color-2: #a1d6fe;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 150px;
+
+  .logo {
+    margin-top: 50px;
+    width: 180px;
+    height: 120px;
+    margin-bottom: 100px;
+    margin-right: 30px;
+    animation: logoAnim var(--breathe-duration) ease-in-out infinite;
+  }
+
+  .logo > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @keyframes logoAnim {
+    15%,
+    25%,
+    40% {
+      transform: scale(1.7);
+      opacity: 1;
+    }
+
+    100%,
+    0% {
+      transform: scale(1.2);
+      opacity: 0.8;
+    }
+  }
+
+  .bunny-container {
+    width: var(--bunny-size);
+    height: var(--bunny-size);
+  }
+
+  .bunny {
+    width: 230px;
+    height: 300px;
+    transform: translateX(70px);
+  }
+
+  .bunny * {
+    position: absolute;
+  }
+
+  .bunny__body {
+    width: 200px;
+    height: 200px;
+    background: var(--bunny-color);
+    border-radius: 100px 100px 30px 0px;
+    transform: translateY(80px);
+  }
+
+  @keyframes eyesAnim {
+    0%,
+    15%,
+    17%,
+    79%,
+    81% {
+      transform: translate(40px, 40px) rotateZ(6deg);
+    }
+    16%,
+    80% {
+      transform: translate(40px, 40px) rotateZ(6deg) scaleY(0.3);
+    }
+    60% {
+      transform: translate(40px, 30px) rotateZ(6deg);
+    }
+    10%,
+    70%,
+    100% {
+      transform: translate(40px, 40px) rotateZ(6deg);
+    }
+  }
+
+  .bunny__eyes {
+    padding: 6px;
+    background: var(--bunny-eye-color);
+    border-radius: 50%;
+    box-shadow: 80px 0 var(--bunny-eye-color);
+    transform: translate(40px, 40px) rotateZ(6deg);
+    animation: eyesAnim var(--breathe-duration) linear infinite;
+  }
+
+  @keyframes noseAnim {
+    60% {
+      transform: translate(70px, 40px);
+    }
+    10%,
+    70%,
+    100% {
+      transform: translate(70px, 50px);
+    }
+  }
+
+  .bunny__nose {
+    padding: 5px 8px;
+    background: var(--bunny-nose-color);
+    border-radius: 50%;
+    transform: translate(70px, 50px);
+    animation: noseAnim var(--breathe-duration) linear infinite;
+  }
+
+  .bunny__nose::after {
+    content: '|';
+    text-shadow: 1px 0px, -1px 0;
+    color: var(--bunny-nose-color);
+    position: absolute;
+    font-size: 20px;
+    font-weight: bolder;
+    transform: translateX(-2px);
+  }
+
+  @keyframes cheeksAnim {
+    60% {
+      transform: translate(10px, 50px) rotateZ(5deg);
+      opacity: 0.5;
+    }
+    10%,
+    70%,
+    100%,
+    0% {
+      transform: translate(10px, 55px) rotateZ(5deg);
+      opacity: 0.2;
+    }
+  }
+
+  .bunny__cheeks {
+    padding: 18px;
+    background: var(--bunny-cheek-color);
+    border-radius: 50%;
+    transform: translate(10px, 55px) rotateZ(5deg);
+    box-shadow: 110px 0 var(--bunny-cheek-color);
+    animation: cheeksAnim var(--breathe-duration) linear infinite;
+  }
+
+  @keyframes breatheMouthAnim {
+    60% {
+      transform: translate(70px, 70px) scale(3, 2.5);
+    }
+    76%,
+    80%,
+    84%,
+    88%,
+    99% {
+      transform: translate(66px, 70px);
+    }
+  }
+
+  .bunny__mouth {
+    padding: 8px 10px;
+    background: var(--bunny-tongue-color);
+    border-radius: 50%;
+    transform: translate(66px, 70px);
+    box-shadow: inset 5px 8px var(--bunny-mouth-color);
+    animation: breatheMouthAnim var(--breathe-duration) linear infinite;
+  }
+
+  .bunny__ears {
+    width: 200px;
+    height: 100px;
+  }
+
+  @keyframes earLeftAnim {
+    0%,
+    10%,
+    75% {
+      transform: var(--transform-3);
+    }
+    15%,
+    17%,
+    65% {
+      transform: var(--transform-1);
+    }
+    16% {
+      transform: var(--transform-2);
+    }
+
+    25%,
+    29%,
+    42%,
+    46%,
+    56%,
+    60% {
+      transform: var(--transform-4);
+    }
+    23%,
+    27%,
+    31%,
+    40%,
+    44%,
+    48%,
+    54%,
+    58%,
+    62% {
+      transform: var(--transform-1);
+    }
+  }
+
+  @keyframes earRightAnim {
+    0%,
+    10%,
+    75% {
+      transform: var(--transform-3);
+    }
+    13%,
+    15%,
+    65% {
+      transform: var(--transform-1);
+    }
+    14% {
+      transform: var(--transform-2);
+    }
+
+    28%,
+    32%,
+    44%,
+    48%,
+    55%,
+    59% {
+      transform: var(--transform-4);
+    }
+    26%,
+    30%,
+    34%,
+    42%,
+    46%,
+    50%,
+    53%,
+    57%,
+    61% {
+      transform: var(--transform-1);
+    }
+  }
+
+  .bunny__ear {
+    width: 50px;
+    height: 100px;
+    border-radius: 50% 50% 0%;
+    background: var(--bunny-color);
+    transform-origin: bottom left;
+    box-shadow: inset 0px 15px var(--bunny-color-2);
+    transform: var(--transform-3);
+  }
+
+  .bunny__ear--left {
+    --transform-1: translateX(50px) rotate(10deg);
+    --transform-2: translateX(50px) rotate(5deg);
+    --transform-3: translateX(50px) rotate(30deg);
+    --transform-4: translateX(50px) rotate(8deg);
+    animation: earLeftAnim var(--breathe-duration) linear infinite;
+  }
+
+  .bunny__ear--right {
+    --transform-1: translateX(125px) rotate(25deg);
+    --transform-2: translateX(125px) rotate(20deg);
+    --transform-3: translateX(125px) rotate(45deg);
+    --transform-4: translateX(125px) rotate(23deg);
+    animation: earRightAnim var(--breathe-duration) linear infinite;
+  }
+
+  .bunny__feet {
+    height: 35px;
+    width: 200px;
+    transform: translateY(265px);
+  }
+
+  .bunny__foot {
+    height: 35px;
+    width: 65px;
+    background: var(--bunny-color-2);
+    border-radius: 0 0 25px 50%;
+  }
+
+  .bunny__foot--left {
+    transform: rotate(10deg) skewY(-20deg);
+  }
+
+  .bunny__foot--right {
+    transform: translateX(110px) rotate(10deg) skewY(-20deg);
+  }
+
+  @keyframes tailAnim1 {
+    0%,
+    15%,
+    25%,
+    75%,
+    85%,
+    95% {
+      transform: translate(190px, 200px) rotate(8deg);
+    }
+    20%,
+    80%,
+    90% {
+      transform: translate(190px, 198px) rotate(-8deg);
+    }
+  }
+
+  .bunny__tail {
+    height: 50px;
+    width: 40px;
+    background: var(--bunny-color-2);
+    border-radius: 50% 50% 50%;
+    transform: translate(190px, 200px) rotate(8deg);
+    animation: tailAnim1 3s linear infinite;
+  }
+
+  .bunny__arm {
+    width: 50px;
+    height: 100px;
+    transform: translate(-70px, 140px);
+  }
+
+  @keyframes pawAnim {
+    0%,
+    75%,
+    100% {
+      transform: translate(-47px, 197px) rotate(-2deg);
+    }
+    65% {
+      transform: translate(-47px, 197px) rotate(10deg);
+    }
+  }
+
+  .bunny__paw {
+    width: 30px;
+    height: 50px;
+    margin-left: 20px;
+    background: var(--bunny-color);
+    border-radius: 50px 0 0 50px;
+    transform-origin: bottom right;
+    transform: translate(-47px, 197px) rotate(-2deg);
+    transform: translate(-47px, 197px) rotate(10deg);
+  }
+
+  .grass {
+    width: 300px;
+    height: 70px;
+    background: var(--grass-color);
+    position: absolute;
+    border-radius: 50%;
+    transform: translateY(260px);
+    box-shadow: 0 6px 0 16px var(--grass-color-2);
+  }
+
+  .start-btn {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    top: 135px;
+    left: 40px;
+    padding: max(0.4vw, 0.8vh) max(0.6vw, 1.2vh);
+    font-size: 18px;
+    line-height: 24px;
+    border-radius: 10px;
+    border: 1px solid var(--bunny-eye-color);
+    color: var(--bunny-eye-color);
+    text-decoration: none;
+  }
+
+  .start-btn:hover {
+    border: 1px solid var(--bunny-color-2);
+    color: var(--bunny-color-2);
+  }
+}

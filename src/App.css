@@ -1,0 +1,38 @@
+* {
+  user-select: none;
+}
+
+.wrong {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio-btn,
+.go-main-btn {
+  position: absolute;
+  display: block;
+  padding: 0;
+  background: transparent;
+  border: var(--main-color);
+  cursor: pointer;
+}
+
+.audio-btn {
+  top: 5px;
+  right: 5px;
+}
+
+.audio-btn > img,
+.go-main-btn > img {
+  display: block;
+  max-width: max(4vw, 7vh);
+  max-height: max(4vw, 7vh);
+}
+
+.go-main-btn {
+  top: 5px;
+  left: 5px;
+}

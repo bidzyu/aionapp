@@ -1,0 +1,58 @@
+export default [
+  {
+    id: 1,
+    question: 'qweqwe?',
+    variants: ['qe', 'ee', 'ew', 'ed'],
+    answer: 'ee',
+    type: 'lor',
+  },
+  {
+    id: 2,
+    question: 'qweqwe2?',
+    variants: ['qe', 'ee', 'ew', 'ed'],
+    answer: 'ee',
+    type: 'lor',
+  },
+  {
+    id: 3,
+    question: 'qweqwe3?',
+    variants: ['qe', 'ee', 'ew', 'ed'],
+    answer: 'ee',
+    type: 'game',
+  },
+  {
+    id: 4,
+    question: 'qweqwe4?',
+    variants: ['qe', 'ee', 'ew', 'ed'],
+    answer: 'ee',
+    type: 'lor',
+  },
+  {
+    id: 5,
+    question: 'qweqwe?',
+    variants: ['qe', 'ee', 'ew', 'ed'],
+    answer: 'ee',
+    type: 'lor',
+  },
+  {
+    id: 6,
+    question: 'qweqwe2?',
+    variants: ['qe', 'ee', 'ew', 'ed'],
+    answer: 'ee',
+    type: 'lor',
+  },
+  {
+    id: 7,
+    question: 'qweqwe3?',
+    variants: ['qe', 'ee', 'ew', 'ed'],
+    answer: 'ee',
+    type: 'game',
+  },
+  {
+    id: 8,
+    question: 'qweqwe4?',
+    variants: ['qe', 'ee', 'ew', 'ed'],
+    answer: 'ee',
+    type: 'lor',
+  },
+];
